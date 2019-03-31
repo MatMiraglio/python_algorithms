@@ -1,3 +1,15 @@
+def fibonacci_iterative(n):
+    memo = {}
+    for i in range(1, n + 1):
+        if i <= 2: 
+            result = 1
+        else:
+            result = memo[i - 1] + memo[i - 2]
+        memo[i] = result 
+    
+    return memo[n]
+
+
 def fibonacci(n : int):
     if n <= 2:
         return 1
@@ -28,3 +40,8 @@ assert fibonacci_memoized(3) == 2
 assert fibonacci_memoized(4) == 3
 assert fibonacci_memoized(5) == 5
 assert fibonacci_memoized(6) == 8
+
+assert fibonacci_iterative(3) == 2
+assert fibonacci_iterative(4) == 3
+assert fibonacci_iterative(5) == 5
+assert fibonacci_iterative(6) == 8
