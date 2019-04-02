@@ -1,2 +1,2 @@
-# python_algorithms
+# Python algorithms
 Python solutions to algorithms and data structures problems
