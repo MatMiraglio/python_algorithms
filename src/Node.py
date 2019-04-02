@@ -5,7 +5,7 @@ class Node:
     def __init__(self, x):
         self.val = x
         self.next = None
-        self._n = self
+        self._iterator = self
 
     def __str__(self): 
        return 'Node: %s' % (self.val)
@@ -24,9 +24,9 @@ class Node:
         return self
 
     def __next__(self):
-        if self._n:
-            current_node = self._n
-            self._n = self._n.next
+        if self._iterator:
+            current_node = self._iterator
+            self._iterator = self._iterator.next
             return current_node
         else:
             raise StopIteration
