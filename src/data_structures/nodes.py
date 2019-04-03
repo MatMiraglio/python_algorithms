@@ -30,8 +30,9 @@ class UndirectedNode:
         self.state = State.Unvisited
 
     def add_adjacent(self, node):
-        self.add_adjacent += [node]
-    
+        self.adjacency_list += [node]
+
+
 class State(Enum):
     Unvisited = 0
     Visiting = 1
