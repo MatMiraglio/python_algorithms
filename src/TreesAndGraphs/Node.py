@@ -18,7 +18,7 @@ class Node():
         return self.data
 
     def visited(self):
-        self.state = Visited
+        self.state = State.Visited
 
 class State(Enum):
     Unvisited = 0

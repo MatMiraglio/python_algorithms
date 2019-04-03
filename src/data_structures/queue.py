@@ -1,14 +1,11 @@
-from typing import List, Optional
-from Node import Node
-
 class Queue():
     def __init__(self):
-      self.array = List[Node]
+      self.array = []
     
-    def add(self, node : Node):
+    def enqueue(self, node):
       self.array.append(node)
     
-    def remove(self) -> Optional[Node]:
+    def dequeue(self):
       if not len(self.array):
         return None
       item = self.array[0]
