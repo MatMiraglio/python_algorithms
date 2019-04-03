@@ -24,10 +24,13 @@ class BinaryNode:
 
 class UndirectedNode:
 
-    def __init__(self, val, adjacency_list):
+    def __init__(self, val, adjacency_list = None):
         self.val = val
-        self.adjacency_list : List[UndirectedNode] = adjacency_list or []
+        self.adjacency_list = adjacency_list or []
         self.state = State.Unvisited
+
+    def add_adjacent(self, node):
+        self.add_adjacent += [node]
     
 class State(Enum):
     Unvisited = 0
