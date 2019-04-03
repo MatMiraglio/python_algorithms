@@ -1,7 +1,7 @@
-from .data_structures.nodes import UndirectedNode, State
-from .data_structures.queue import Queue
+from ..data_structures.nodes import UndirectedNode, State
+from ..data_structures.queue import Queue
 
-def are_conected(graph, start : UndirectedNode, end : UndirectedNode) -> bool:
+def connected_nodes(graph, start : UndirectedNode, end : UndirectedNode) -> bool:
     if start == end:
         return True
     
