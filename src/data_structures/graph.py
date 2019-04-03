@@ -1,5 +1,3 @@
-from Node import Node
-
 class Graph:
     
     def __init__(self, nodes : []):
@@ -7,4 +5,8 @@ class Graph:
 
     def get_nodes(self):
         return self.nodes
+    
+    def add_node(self, node):
+        if node:
+            self.nodes.append(node)
     
