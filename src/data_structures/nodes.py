@@ -3,7 +3,7 @@ from typing import List
 
 class LinkNode:
 
-    def __init__(self, val, next: LinkNode = None):
+    def __init__(self, val, next = None):
         self.val = val
         self.next = next
 
@@ -29,8 +29,14 @@ class UndirectedNode:
         self.adjacency_list = adjacency_list or []
         self.state = State.Unvisited
 
+    def get_neighbours(self):
+        return self.adjacency_list
+
     def add_adjacent(self, node):
         self.adjacency_list += [node]
+
+    def visited(self):
+        self.state = State.Visited
 
 
 class State(Enum):
