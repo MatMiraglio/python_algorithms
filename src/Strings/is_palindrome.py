@@ -12,7 +12,3 @@ def is_palindrome(string) -> bool:
             end -= 1
             
         return True
-
-assert is_palindrome("asdsa")
-assert not is_palindrome("asdfddsa")
-assert is_palindrome("a")

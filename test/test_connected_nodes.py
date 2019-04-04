@@ -1,6 +1,6 @@
 from ..src.data_structures.nodes import UndirectedNode
 from ..src.data_structures.graph import Graph
-from ..src.TreesAndGraphs.connected_nodes import connected_nodes
+from ..src.graphs.connected_nodes import connected_nodes
 import unittest
 
 
