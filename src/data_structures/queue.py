@@ -13,7 +13,7 @@ class Queue():
       return item
 
     def is_empty(self):
-      return self.array.count > 0
-    
-    def is_not_empty(self):
-      return not self.is_empty()
+      if self.array:
+        return False
+
+      return True
