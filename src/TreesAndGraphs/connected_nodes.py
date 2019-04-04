@@ -13,11 +13,11 @@ def connected_nodes(graph, start : UndirectedNode, end : UndirectedNode) -> bool
     start.state = State.Visiting
     queue.enqueue(start)
 
-    while queue.is_not_empty():
+    while not queue.is_empty():
         current = queue.dequeue()
         current.state = State.Visiting
-        neightbourgs = current.get_neighbours()
-        for node in neightbourgs:
+        neighbours = current.get_neighbours()
+        for node in neighbours:
             if node.state == State.Unvisited:
                 if node == end:
                     return True
