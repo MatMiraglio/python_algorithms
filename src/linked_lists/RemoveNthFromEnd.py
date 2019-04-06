@@ -1,7 +1,7 @@
-from Node import Node
+from ..data_structures.nodes import LinkNode
 
 def removeNth(head, n):
-    dummy = Node(0)
+    dummy = LinkNode(0)
     dummy.next = head
     first, second = dummy, dummy
 

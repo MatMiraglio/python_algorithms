@@ -1,4 +1,4 @@
-from ..src.strings.is_palindrome import is_palindrome
+from ..src.arrays_and_strings.is_palindrome import is_palindrome
 
 import unittest
 
