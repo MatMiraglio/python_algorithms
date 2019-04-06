@@ -6,10 +6,17 @@
         "-p",
         "test_*.py"
     ],
-    "python.unitTest.pyTestEnabled": true,
-    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.nosetestsEnabled": true,
     "python.unitTest.unittestEnabled": false,
     "python.unitTest.pyTestArgs": [
+        "test"
+    ],
+    "python.pythonPath": "C:\\Users\\mirag\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
+    "python.linting.mypyEnabled": false,
+    "python.linting.pep8Enabled": true,
+    "python.linting.enabled": true,
+    "python.unitTest.nosetestArgs": [
         "test"
     ]
 }
