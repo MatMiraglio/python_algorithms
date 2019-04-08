@@ -358,4 +358,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# End of https://www.gitignore.io/api/python
+.vscode/settings.json
+.noseids
