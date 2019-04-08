@@ -6,7 +6,7 @@ def strStr(haystack: str, needle: str) -> int:
             return i
 
     return -1
-    
+
 
 assert strStr('hello', 'll') == 2
 assert strStr('hello', 'q') == -1

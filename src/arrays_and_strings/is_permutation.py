@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 def is_permutation(first, second) -> bool:
 
         if len(first) != len(second):

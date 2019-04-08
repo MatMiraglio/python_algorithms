@@ -1,5 +1,6 @@
 from ..data_structures.nodes import LinkNode
 
+
 def removeNth(head, n):
     dummy = LinkNode(0)
     dummy.next = head
@@ -7,18 +8,19 @@ def removeNth(head, n):
 
     for _ in range(n + 1):
         first = first.next
-    
-    while first != None:
+
+    while first:
         first = first.next
         second = second.next
 
-    second.next = second.next.next 
+    second.next = second.next.next
 
     return dummy.next
 
+
 def removeNthFromEnd(head, n):
-    if head.next == None:
-            return None
+    if not head.next:
+        return None
 
     stack = []
     current_node = head
@@ -26,11 +28,10 @@ def removeNthFromEnd(head, n):
     while current_node:
         stack.append(current_node)
         current_node = current_node.next
-    
+
     if len(stack) == n:
         return head.next
-    
-    
+
     node_after_n = None
     node_before_n = None
 
