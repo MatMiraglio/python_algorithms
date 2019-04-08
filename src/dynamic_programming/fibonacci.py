@@ -1,12 +1,12 @@
 def fibonacci_iterative(n):
     memo = {}
     for i in range(1, n + 1):
-        if i <= 2: 
+        if i <= 2:
             result = 1
         else:
             result = memo[i - 1] + memo[i - 2]
-        memo[i] = result 
-    
+        memo[i] = result
+
     return memo[n]
 
 
@@ -18,7 +18,7 @@ def fibonacci(n: int):
 
 
 def fibonacci_memoization(n: int):
-    memo: dict = {}
+    memo = {}
     return _fibonacci(n, memo)
 
 

@@ -1,5 +1,5 @@
-def removeElement( nums, val: int) -> int:
-    
+def removeElement(nums, val: int) -> int:
+
     swapIndex = 0
 
     for i, numb in enumerate(nums):
@@ -8,13 +8,14 @@ def removeElement( nums, val: int) -> int:
             nums[swapIndex] = numb
             nums[i] = temp
             swapIndex += 1
-    
+
     while nums and nums[0] == val:
         del nums[0]
 
     return len(nums)
 
-data = [0,1,2,2,3,0,4,2]
+
+data = [0, 1, 2, 2, 3, 0, 4, 2]
 
 print(removeElement([1], 1))
 

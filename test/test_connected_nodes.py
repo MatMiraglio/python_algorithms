@@ -20,7 +20,8 @@ class Test(unittest.TestCase):
         node_x = UndirectedNode('Disconnected')
         node_d.add_adjacent(node_a)
         node_h.add_adjacent(node_i)
-        graph = Graph([node_j, node_i, node_h, node_d, node_f, node_b, node_g, node_c, node_a, node_e, node_x])
+        graph = Graph([node_j, node_i, node_h, node_d, node_f,
+                       node_b, node_g, node_c, node_a, node_e, node_x])
 
         self.assertTrue(connected_nodes(graph, node_a, node_j))
         self.assertTrue(connected_nodes(graph, node_a, node_i))

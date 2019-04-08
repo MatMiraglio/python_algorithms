@@ -1,5 +1,6 @@
 def isPalindrome(x: int) -> bool:
-    if x < 0: return False
+    if x < 0:
+        return False
 
     original = x
     count = 0
@@ -29,14 +30,15 @@ def isPalindrome(x: int) -> bool:
         right -= 1
     return True
 
-assert isPalindrome(1001) == True
-assert isPalindrome(2332) == True
-assert isPalindrome(1023) == False
-assert isPalindrome(123421) == False
-assert isPalindrome(0) == True
-assert isPalindrome(1) == True
-assert isPalindrome(2) == True
-assert isPalindrome(-2) == False
-assert isPalindrome(-1001) == False
-assert isPalindrome(100) == False
-assert isPalindrome(10) == False
+
+assert isPalindrome(1001)
+assert isPalindrome(2332)
+assert not isPalindrome(1023)
+assert not isPalindrome(123421)
+assert isPalindrome(0)
+assert isPalindrome(1)
+assert isPalindrome(2)
+assert not isPalindrome(-2)
+assert not isPalindrome(-1001)
+assert not isPalindrome(100)
+assert not isPalindrome(10)
