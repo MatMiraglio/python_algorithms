@@ -1,70 +1,46 @@
-from is_palindrome import is_palindrome
 
 def longest_palindrome(s: str) -> str:
 
-    L, R = 0, 0
-    max_len = 0
+    max_sub = ''
 
     for i in range(len(s)):
-        left1, right1 = _expand(s, i, i)
-        left2, right2 =_expand(s, i, i + 1)
-        len1 = right1 - left1
-        len2 = right2 - left2
+        # center is a letter "aba"
+        odd = _expand(s, i, i)
 
-        if len1 > len2 and len1 > max_len:
-            L, R = left1, right1
-        elif len2 > len1 and len2 > max_len:
-            L, R = left2, right2
+        # center is between 2 letters "abba"
+        even = _expand(s, i, i + 1)
+
+        if len(odd) > len(max_sub):
+            max_sub = odd
+
+        if len(even) > len(max_sub):
+            max_sub = even
+
+    return max_sub
 
 
+def _expand(string, L, R) -> int:
 
-    return s[L:R]
+    end, start = L, R
 
-
-def _expand(string, left, right):
-    L = left
-    R = right
-
-    while left >= 0 and right < len(string) - 1:
-        if string[left] == string[right]:
-            right += 1
-            left -= 1
+    while L >= 0 and R < len(string):
+        if string[L] == string[R]:
+            start = L
+            end = R
+            R += 1
+            L -= 1
         else:
             break
-    
-    return left - right - 1 
+
+    return string[start:end + 1]
 
 
-
-def longestPalindrome(s: str) -> str:
-    start = end = 0
-    sub_palindrome = ""
-    length = len(s)
-
-    while start < length:
-        end = 0
-        while end <= length:
-            sub = s[start:end]
-            if is_palindrome(sub):
-                if len(sub_palindrome) < len(sub):
-                    sub_palindrome = sub
-            
-            end += 1
-        start += 1
-
-    return sub_palindrome
-
+assert _expand('aba', 1, 1) == 'aba'
+assert _expand('aabaa', 2, 2) == 'aabaa'
+assert _expand('aba', 0, 1) == ''
 assert longest_palindrome("aba") == "aba"
 assert longest_palindrome("ababa") == "ababa"
 assert longest_palindrome("asdfdg") == "dfd"
 assert longest_palindrome("qwertyuy") == "yuy"
 assert longest_palindrome("qwerrtyp") == "rr"
 assert longest_palindrome("qwerrewq") == "qwerrewq"
-
-
-assert longestPalindrome("aba") == "aba"
-assert longestPalindrome("ababa") == "ababa"
-assert longestPalindrome("asdfdg") == "dfd"
-assert longestPalindrome("qwertyuy") == "yuy"
-assert longestPalindrome("qwerrtyp") == "rr"
-assert longestPalindrome("qwerrewq") == "qwerrewq"
